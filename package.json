@@ -1,0 +1,66 @@
+{
+	"name": "incubie_landing_page",
+	"private": true,
+	"version": "0.1.0",
+	"scripts": {
+		"build": "gatsby build",
+		"develop": "gatsby develop",
+		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+		"start": "npm run develop",
+		"serve": "gatsby serve",
+		"clean": "gatsby clean"
+	},
+	"dependencies": {
+		"@material-ui/icons": "^4.9.1",
+		"@reach/router": "^1.3.1",
+		"babel-plugin-styled-components": "^1.10.7",
+		"gatsby": "^2.19.17",
+		"gatsby-image": "^2.2.41",
+		"gatsby-plugin-manifest": "^2.2.41",
+		"gatsby-plugin-netlify": "^2.1.32",
+		"gatsby-plugin-offline": "^3.0.34",
+		"gatsby-plugin-react-helmet": "^3.1.22",
+		"gatsby-plugin-react-svg": "^3.0.0",
+		"gatsby-plugin-sharp": "^2.4.5",
+		"gatsby-plugin-smoothscroll": "^1.0.4",
+		"gatsby-plugin-styled-components": "^3.1.19",
+		"gatsby-plugin-typescript": "^2.1.27",
+		"gatsby-source-filesystem": "^2.1.48",
+		"gatsby-transformer-sharp": "^2.3.14",
+		"lottie-web": "^5.6.4",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-helmet": "^5.2.1",
+		"react-modal": "^3.11.1",
+		"react-spring": "^8.0.27",
+		"styled-components": "^5.0.1",
+		"styled-normalize": "^8.0.7"
+	},
+	"devDependencies": {
+		"@types/react-helmet": "^5.0.15",
+		"@types/styled-components": "^4.4.3",
+		"@typescript-eslint/eslint-plugin": "^2.19.2",
+		"@typescript-eslint/parser": "^2.19.2",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-loader": "^3.0.3",
+		"eslint-plugin-import": "^2.20.1",
+		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-react": "^7.18.3",
+		"gatsby-plugin-eslint": "^2.0.8",
+		"husky": "^4.2.3",
+		"lint-staged": "^10.0.7",
+		"prettier": "^1.19.1",
+		"typescript": "^3.7.5"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{ts,tsx}": [
+			"eslint --fix"
+		]
+	}
+}
