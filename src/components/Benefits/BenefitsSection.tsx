@@ -5,6 +5,7 @@ import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfie
 import ShowChartIcon from "@material-ui/icons/ShowChart";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import * as React from "react";
+import { Waypoint } from "react-waypoint";
 import styled from "styled-components";
 import { COLOR_11, COLOR_3, MAIN_COLOR } from "../../utils/colors";
 import BenefitItem from "./BenefitItem";
@@ -58,12 +59,14 @@ const benefits = [
 			"Spend less time in meetings and email. More time managing your project.",
 		icon: AccessTimeIcon,
 		sideAnimation: "left",
+		animationDuration: 1,
 	},
 	{
 		title: "Fix Your Backlog",
 		description: "Keep ideas in Incubie, and proven concepts in your backlog.",
 		icon: BuildIcon,
 		sideAnimation: "right",
+		animationDuration: 1,
 	},
 	{
 		title: "Prioritize",
@@ -71,6 +74,7 @@ const benefits = [
 			"Discover what is high priority by learning what users and employees vote most",
 		icon: FormatListNumberedIcon,
 		sideAnimation: "left",
+		animationDuration: 1.4,
 	},
 	{
 		title: "Boost Employee Engagement",
@@ -78,6 +82,7 @@ const benefits = [
 			"Give everyone the chance to voice ideas -- reduce silos and remote work isolation.",
 		icon: SentimentVerySatisfiedIcon,
 		sideAnimation: "right",
+		animationDuration: 1.4,
 	},
 	{
 		title: "Work On What Matters",
@@ -85,33 +90,40 @@ const benefits = [
 			"Ensure developers are spending their time on features that are well vetted.",
 		icon: ShowChartIcon,
 		sideAnimation: "left",
+		animationDuration: 1.9,
 	},
 	{
 		title: "Improve Customer Satisfaction",
 		description: "Learn what your users really need and react with confidence.",
 		icon: StarRateIcon,
 		sideAnimation: "right",
+		animationDuration: 1.9,
 	},
 ];
 
 function BenefitsSection({ id }: Props) {
+	const [isRunning, setIsRunning] = React.useState(false);
 	return (
-		<Container id={id}>
-			<Title>Benefits</Title>
-			<ItemsContainer>
-				{benefits.map(benefit => {
-					return (
-						<BenefitItem
-							key={benefit.title}
-							title={benefit.title}
-							description={benefit.description}
-							icon={benefit.icon}
-							sideAnimation={benefit.sideAnimation as "left"}
-						/>
-					);
-				})}
-			</ItemsContainer>
-		</Container>
+		<Waypoint onEnter={() => setIsRunning(true)}>
+			<Container id={id}>
+				<Title>Benefits</Title>
+				<ItemsContainer>
+					{benefits.map(benefit => {
+						return (
+							<BenefitItem
+								key={benefit.title}
+								title={benefit.title}
+								description={benefit.description}
+								icon={benefit.icon}
+								sideAnimation={benefit.sideAnimation as string}
+								animationDuration={benefit.animationDuration}
+								isRunning={isRunning}
+							/>
+						);
+					})}
+				</ItemsContainer>
+			</Container>
+		</Waypoint>
 	);
 }
 

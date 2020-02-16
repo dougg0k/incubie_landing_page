@@ -1,8 +1,41 @@
 import { SvgIconProps } from "@material-ui/core";
 import * as React from "react";
-import Slide from "react-reveal/Slide";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { COLOR_10, COLOR_9 } from "../../utils/colors";
+
+const slideLeftAnimation = keyframes`
+	0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: none;
+  }
+`;
+
+const slideRightAnimation = keyframes`
+	0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: none;
+  }
+`;
+
+interface AnimationProps {
+	isRunning?: boolean;
+	duration?: number;
+	sideAnimation?: "left" | "right" | string;
+}
+
+const animationStyle = css`
+	animation-fill-mode: both;
+	animation-duration: ${(props: AnimationProps) =>
+		props.duration ? props.duration : "2"}s;
+	animation-delay: 0ms;
+	animation-iteration-count: 1;
+	animation-play-state: ${(props: AnimationProps) =>
+		props.isRunning ? "running" : "paused"};
+`;
 
 const Container = styled.div`
 	display: flex;
@@ -11,6 +44,17 @@ const Container = styled.div`
 	height: 100px;
 	margin-bottom: 30px;
 	align-items: center;
+	${animationStyle};
+	${(props: AnimationProps) =>
+		props.sideAnimation === "left" &&
+		css`
+			animation-name: ${slideLeftAnimation};
+		`}
+	${(props: AnimationProps) =>
+		props.sideAnimation === "right" &&
+		css`
+			animation-name: ${slideRightAnimation};
+		`}
 `;
 
 const TextContainer = styled.div`
@@ -44,22 +88,33 @@ interface Props {
 	title: string;
 	description: string;
 	icon: React.FC<SvgIconProps>;
-	sideAnimation?: "left" | "right" | null;
+	sideAnimation?: "left" | "right" | string;
+	animationDuration?: number;
+	isRunning?: boolean;
 }
 
-function BenefitItem({ title, description, icon: Icon, sideAnimation }: Props) {
+function BenefitItem({
+	title,
+	description,
+	icon: Icon,
+	sideAnimation,
+	animationDuration,
+	isRunning,
+}: Props) {
 	return (
-		<Slide left={sideAnimation === "left"} right={sideAnimation === "right"}>
-			<Container>
-				<IconContainer>
-					<Icon />
-				</IconContainer>
-				<TextContainer>
-					<Title>{title}</Title>
-					<Description>{description}</Description>
-				</TextContainer>
-			</Container>
-		</Slide>
+		<Container
+			isRunning={isRunning}
+			duration={animationDuration}
+			sideAnimation={sideAnimation}
+		>
+			<IconContainer>
+				<Icon />
+			</IconContainer>
+			<TextContainer>
+				<Title>{title}</Title>
+				<Description>{description}</Description>
+			</TextContainer>
+		</Container>
 	);
 }
 

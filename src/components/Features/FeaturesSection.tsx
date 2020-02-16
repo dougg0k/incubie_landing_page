@@ -1,6 +1,6 @@
 import * as React from "react";
-import Slide from "react-reveal/Slide";
-import styled, { css } from "styled-components";
+import { Waypoint } from "react-waypoint";
+import styled, { css, keyframes } from "styled-components";
 import { COLOR_3 } from "../../utils/colors";
 import CommentsImage from "./CommentsImage";
 import FeedbackEmail from "./FeedbackEmail";
@@ -24,11 +24,37 @@ const Heading = styled.h2`
 	margin-bottom: 70px;
 `;
 
+const slideLeftAnimation = keyframes`
+	0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: none;
+  }
+`;
+
+interface AnimationProps {
+	isRunning?: boolean;
+	duration?: number;
+}
+
+const animationStyle = css`
+	animation-fill-mode: both;
+	animation-duration: ${(props: AnimationProps) =>
+		props.duration ? props.duration : "2"}s;
+	animation-delay: 0ms;
+	animation-iteration-count: 1;
+	animation-name: ${slideLeftAnimation};
+	animation-play-state: ${(props: AnimationProps) =>
+		props.isRunning ? "running" : "paused"};
+`;
+
 const FeatureContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	margin: 0 25px;
 	margin-bottom: 70px;
+	${animationStyle};
 `;
 
 const FeatureTitle = styled.h3`
@@ -84,13 +110,14 @@ interface Props {
 }
 
 function FeaturesSection({ id }: Props) {
+	const [isRunning, setIsRunning] = React.useState(false);
 	return (
-		<Container id={id}>
-			<Heading>
-				Incubie is the platform that brings everyone&apos;s insight together.
-			</Heading>
-			<FeatureContainer>
-				<Slide left cascade>
+		<Waypoint onEnter={() => setIsRunning(true)}>
+			<Container id={id}>
+				<Heading>
+					Incubie is the platform that brings everyone&apos;s insight together.
+				</Heading>
+				<FeatureContainer isRunning={isRunning}>
 					<FeatureLeftSide width={230}>
 						<FeatureTitle>
 							Gather Feedback From Customers, Clients & Teammates
@@ -103,10 +130,8 @@ function FeaturesSection({ id }: Props) {
 					<FeatureRightSide height={300}>
 						<HomeboardImage />
 					</FeatureRightSide>
-				</Slide>
-			</FeatureContainer>
-			<FeatureContainer>
-				<Slide left cascade>
+				</FeatureContainer>
+				<FeatureContainer isRunning={isRunning} duration={2.8}>
 					<FeatureLeftSide height={300}>
 						<CommentsImage />
 					</FeatureLeftSide>
@@ -117,10 +142,8 @@ function FeaturesSection({ id }: Props) {
 							your team and users really need
 						</FeatureDescription>
 					</FeatureRightSide>
-				</Slide>
-			</FeatureContainer>
-			<FeatureContainer>
-				<Slide left cascade>
+				</FeatureContainer>
+				<FeatureContainer isRunning={isRunning} duration={3.4}>
 					<FeatureLeftSide width={230}>
 						<FeatureTitle>Realtime Feedback</FeatureTitle>
 						<FeatureDescription>
@@ -148,9 +171,9 @@ function FeaturesSection({ id }: Props) {
 							</BottomText>
 						</FeedbackEmail>
 					</FeatureRightSide>
-				</Slide>
-			</FeatureContainer>
-		</Container>
+				</FeatureContainer>
+			</Container>
+		</Waypoint>
 	);
 }
 

@@ -33,7 +33,7 @@
 		"react-helmet": "^5.2.1",
 		"react-hooks-use-modal": "^1.0.5",
 		"react-lottie": "^1.2.3",
-		"react-reveal": "^1.2.2",
+		"react-waypoint": "^9.0.2",
 		"styled-components": "^5.0.1",
 		"styled-normalize": "^8.0.7"
 	},
