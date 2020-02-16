@@ -11,8 +11,8 @@ import SEO from "./src/components/utils/Seo";
 export const wrapRootElement = ({ element }) => {
 	return (
 		<React.Fragment>
-			<SEO />
 			<GlobalStyles />
+			<SEO />
 			{element}
 		</React.Fragment>
 	);

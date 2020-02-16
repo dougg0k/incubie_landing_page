@@ -9,12 +9,22 @@ module.exports = {
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-netlify`,
 		`gatsby-plugin-react-helmet`,
-		`gatsby-plugin-smoothscroll`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
 				path: `${__dirname}/src/images`,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-prefetch-google-fonts`,
+			options: {
+				fonts: [
+					{
+						family: `Open Sans`,
+						variants: [`300`, `400`, `700`],
+					},
+				],
 			},
 		},
 		`gatsby-plugin-react-svg`,

@@ -1,21 +1,8 @@
-import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
 import * as React from "react";
+import WorkingTogether from "../../images/working_together.svg";
 
 const WorkingTogetherImage = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			placeholderImage: file(relativePath: { eq: "working_together.svg" }) {
-				childImageSharp {
-					fluid {
-						...GatsbyImageSharpFluid_withWebp
-					}
-				}
-			}
-		}
-	`);
-
-	return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+	return <WorkingTogether />;
 };
 
 export default WorkingTogetherImage;

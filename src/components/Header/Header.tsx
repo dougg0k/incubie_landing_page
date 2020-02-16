@@ -1,12 +1,27 @@
 import * as React from "react";
 import styled from "styled-components";
+import { COLOR_12, MAIN_COLOR, WHITE_COLOR } from "../../utils/colors";
+import { HEADER_HEIGHT } from "../../utils/constants";
 import LogoHorizontalImage from "./LogoHorizontalImage";
+
+interface StyledHeaderProps {
+	isCollapsed: boolean;
+}
 
 const StyledHeader = styled.header`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
+	position: fixed;
+	z-index: 50;
+	width: 100%;
+	height: ${(props: StyledHeaderProps) =>
+		props.isCollapsed ? "auto" : HEADER_HEIGHT + "px"};
+	padding: 10px 0;
+	background-color: ${(props: StyledHeaderProps) =>
+		props.isCollapsed ? COLOR_12 : "transparent"};
+	transition: background 0.4s ease-in-out, padding 0.4s ease-in-out;
 `;
 
 const Nav = styled.nav``;
@@ -18,20 +33,50 @@ const Ul = styled.ul`
 
 const Li = styled.li`
 	list-style-type: none;
+	margin-right: 20px;
 `;
 
-const A = styled.a``;
+const A = styled.a`
+	text-transform: uppercase;
+	text-decoration: none;
+	color: ${WHITE_COLOR};
+	font-size: 0.9em;
+	border: 0;
+	outline: none;
+	&:hover {
+		color: ${MAIN_COLOR};
+		cursor: pointer;
+	}
+`;
+
+const ImageContainer = styled.div`
+	width: 130px;
+	height: auto;
+	&:hover {
+		cursor: pointer;
+	}
+`;
 
 interface Props {
+	logoOnClick: () => void;
 	firstOnClick: () => void;
 	secondOnClick: () => void;
 	thirdOnClick: () => void;
+	isCollapsed: boolean;
 }
 
-function Header({ firstOnClick, secondOnClick, thirdOnClick }: Props) {
+function Header({
+	logoOnClick,
+	firstOnClick,
+	secondOnClick,
+	thirdOnClick,
+	isCollapsed = false,
+}: Props) {
 	return (
-		<StyledHeader>
-			<LogoHorizontalImage />
+		<StyledHeader isCollapsed={isCollapsed}>
+			<ImageContainer onClick={logoOnClick}>
+				<LogoHorizontalImage />
+			</ImageContainer>
 			<Nav>
 				<Ul>
 					<Li>
