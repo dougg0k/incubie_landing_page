@@ -2,7 +2,7 @@ import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import * as React from "react";
 import useModal from "react-hooks-use-modal";
 import styled from "styled-components";
-import { MAIN_COLOR, WHITE_COLOR } from "../../utils/colors";
+import { COLOR_13, MAIN_COLOR, WHITE_COLOR } from "../../utils/colors";
 import VideoScreenshotImage from "./VideoScreenshotImage";
 
 const Container = styled.div`
@@ -35,6 +35,7 @@ const Button = styled.button`
 	color: ${MAIN_COLOR};
 	&:hover {
 		cursor: pointer;
+		color: ${COLOR_13};
 	}
 `;
 

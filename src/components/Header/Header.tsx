@@ -49,6 +49,10 @@ const A = styled.a`
 	}
 `;
 
+const OutSideAnchor = styled(A)`
+	font-weight: 700;
+`;
+
 const ImageContainer = styled.div`
 	width: 130px;
 	height: auto;
@@ -89,7 +93,9 @@ function Header({
 						<A onClick={thirdOnClick}>Benefits</A>
 					</Li>
 					<Li>
-						<A href="https://beta.incubie.com/login">Login</A>
+						<OutSideAnchor href="https://beta.incubie.com/login">
+							Login
+						</OutSideAnchor>
 					</Li>
 				</Ul>
 			</Nav>

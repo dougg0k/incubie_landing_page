@@ -12,3 +12,4 @@ export const COLOR_9 = "#585858";
 export const COLOR_10 = "#99c5d7";
 export const COLOR_11 = "#f3f3f3";
 export const COLOR_12 = "#454545";
+export const COLOR_13 = "#337ab7";
