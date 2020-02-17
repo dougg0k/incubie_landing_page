@@ -15,10 +15,14 @@ const Button = styled.button`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	outline: none;
 	&:hover {
 		background-color: ${MAIN_COLOR};
 		border-radius: 2px;
 		cursor: pointer;
+	}
+	&:focus {
+		outline: none;
 	}
 `;
 

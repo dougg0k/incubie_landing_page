@@ -15,6 +15,9 @@ const Anchor = styled.a`
 		background-color: ${MAIN_COLOR};
 		border-color: ${MAIN_COLOR};
 	}
+	&:focus {
+		outline: none;
+	}
 `;
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {

@@ -3,7 +3,12 @@ import { normalize } from "styled-normalize";
 
 const GlobalStyle = createGlobalStyle`
 	${normalize}
-  body {
+	html,
+	body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 		font-family: 'Open Sans', sans-serif;
 		-moz-osx-font-smoothing: grayscale;
   	-webkit-font-smoothing: antialiased;

@@ -37,6 +37,9 @@ const Button = styled.button`
 		cursor: pointer;
 		color: ${COLOR_13};
 	}
+	&:focus {
+		outline: none;
+	}
 `;
 
 interface Props {

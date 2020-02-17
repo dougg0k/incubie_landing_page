@@ -7,6 +7,7 @@ const StyledImg = styled(Img)`
 	position: unset !important;
 	background-position: 50% 0px;
 	background-attachment: fixed;
+	background-size: cover;
 	z-index: -1;
 	opacity: initial !important;
 	&::before {
