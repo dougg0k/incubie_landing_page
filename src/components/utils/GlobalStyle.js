@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
 const GlobalStyle = createGlobalStyle`
-	${normalize}
 	html,
 	body {
     width: 100%;
@@ -17,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 		scroll-behavior: smooth;
 		font-size: 16px;
   }
+	${normalize}
 `;
 
 export default GlobalStyle;

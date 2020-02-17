@@ -10,7 +10,8 @@ const StyledImg = styled(Img)`
 	background-size: cover;
 	z-index: -1;
 	opacity: initial !important;
-	&::before {
+	&::before,
+	&::after {
 		background-blend-mode: darken;
 		background: rgba(0, 0, 0, 0.5);
 	}

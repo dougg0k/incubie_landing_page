@@ -6,12 +6,7 @@ import { WHITE_COLOR } from "../utils/colors";
 import { tosText } from "../utils/tosText";
 
 const Container = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	width: 100%;
-	height: 100%;
+	position: relative;
 `;
 
 const Text = styled.span`
@@ -19,8 +14,7 @@ const Text = styled.span`
 	font-size: 1.3em;
 	white-space: pre-line;
 	text-align: center;
-	overflow-y: scroll;
-	position: fixed;
+	overflow-y: hidden;
 	height: 100%;
 	margin: 0;
 `;
@@ -28,6 +22,7 @@ const Text = styled.span`
 const TextContainer = styled.div`
 	display: flex;
 	justify-content: center;
+	width: 80%;
 `;
 
 const CommonLink = styled(Link)`
@@ -42,14 +37,24 @@ const CommonLink = styled(Link)`
 	margin-bottom: 15px;
 `;
 
+const ContentContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-bottom: 50px;
+`;
+
 function TosPage() {
 	return (
 		<Container>
 			<BackgroundImage />
-			<CommonLink to="/">Go Back</CommonLink>
-			<TextContainer>
-				<Text>{tosText}</Text>
-			</TextContainer>
+			<ContentContainer>
+				<CommonLink to="/">Go Back</CommonLink>
+				<TextContainer>
+					<Text>{tosText}</Text>
+				</TextContainer>
+			</ContentContainer>
 		</Container>
 	);
 }
