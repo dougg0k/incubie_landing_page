@@ -1,8 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import IconIdea from "../../images/icon-idea.json";
-import IconNotes from "../../images/icon-notes.json";
-import IconTarget from "../../images/icon-target.json";
+import { factsData } from "../../utils/data";
 import BackgroundImage from "../common/BackgroundImage";
 import FactItem from "./FactItem";
 
@@ -17,37 +15,19 @@ const Container = styled.div`
 const FactsContainer = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
 	@media (max-width: 768px) {
 		flex-direction: column;
 	}
 `;
 
-const facts = [
-	{
-		title: "Ideate",
-		icon: IconIdea,
-		description: "Discover Fresh New Ideas From Other Perspectives.",
-	},
-	{
-		title: "Collaborate",
-		icon: IconTarget,
-		description: "Come Together In One Place To Discuss And Solve Issues",
-	},
-	{
-		title: "Communicate",
-		icon: IconNotes,
-		description: "Discuss In A Central Place And Break Down Silos.",
-	},
-];
-
 function FactsSection() {
 	return (
 		<Container>
 			<BackgroundImage />
 			<FactsContainer>
-				{facts.map(fact => (
+				{factsData.map(fact => (
 					<FactItem
 						key={fact.title}
 						title={fact.title}

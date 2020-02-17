@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-background-image";
 import * as React from "react";
 import styled from "styled-components";
+import { COLOR_16 } from "../../utils/colors";
 
 const StyledImg = styled(Img)`
 	position: unset !important;
@@ -13,7 +14,7 @@ const StyledImg = styled(Img)`
 	&::before,
 	&::after {
 		background-blend-mode: darken;
-		background: rgba(0, 0, 0, 0.5);
+		background: ${COLOR_16};
 	}
 `;
 

@@ -14,3 +14,5 @@ export const COLOR_11 = "#f3f3f3";
 export const COLOR_12 = "#454545";
 export const COLOR_13 = "#337ab7";
 export const COLOR_14 = "#999999";
+export const COLOR_15 = "rgba(255, 255, 255, 0.1)";
+export const COLOR_16 = "rgba(0, 0, 0, 0.5)";

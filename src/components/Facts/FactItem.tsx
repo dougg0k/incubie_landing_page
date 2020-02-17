@@ -21,6 +21,7 @@ const Text = styled.p`
 	color: ${WHITE_COLOR};
 	font-weight: 400;
 	font-size: 1.1em;
+	width: 60%;
 `;
 
 const Heading = styled.h1`

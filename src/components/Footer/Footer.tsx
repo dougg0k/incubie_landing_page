@@ -1,11 +1,8 @@
-import FacebookIcon from "@material-ui/icons/Facebook";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import YouTubeIcon from "@material-ui/icons/YouTube";
 import { Link } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
 import { COLOR_4, MAIN_COLOR, WHITE_COLOR } from "../../utils/colors";
+import { footerData } from "../../utils/data";
 import LogoImage from "../common/LogoImage";
 import CircleLink from "./CircleLink";
 
@@ -41,38 +38,17 @@ function Footer() {
 		<Container>
 			<LogoImage />
 			<LinksContainer>
-				<CircleLink
-					href="https://www.facebook.com/incubie/"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="Facebook"
-				>
-					<FacebookIcon style={{ color: WHITE_COLOR }} fontSize="small" />
-				</CircleLink>
-				<CircleLink
-					href="https://twitter.com/IncubieApp"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="Twitter"
-				>
-					<TwitterIcon style={{ color: WHITE_COLOR }} fontSize="small" />
-				</CircleLink>
-				<CircleLink
-					href="https://www.youtube.com/channel/UCtUUmRBPdWuWdB-3KjMi3xw"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="Youtube"
-				>
-					<YouTubeIcon style={{ color: WHITE_COLOR }} fontSize="small" />
-				</CircleLink>
-				<CircleLink
-					href="https://www.linkedin.com/company/incubie/"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="Linkedin"
-				>
-					<LinkedInIcon style={{ color: WHITE_COLOR }} fontSize="small" />
-				</CircleLink>
+				{footerData.map(({ link, ariaLabel, icon: Icon }) => (
+					<CircleLink
+						key={link}
+						href={link}
+						target="_blank"
+						rel="noreferrer"
+						aria-label={ariaLabel}
+					>
+						<Icon style={{ color: WHITE_COLOR }} fontSize="small" />
+					</CircleLink>
+				))}
 			</LinksContainer>
 			<Text>©Copyright 2020 Incubie | All right reserved.</Text>
 			<CommonLink to="/tos">Terms of Service</CommonLink>

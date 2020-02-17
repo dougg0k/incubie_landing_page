@@ -1,7 +1,7 @@
 import * as React from "react";
 import useModal from "react-hooks-use-modal";
 import styled, { css, keyframes } from "styled-components";
-import { WHITE_COLOR } from "../../utils/colors";
+import { COLOR_15, WHITE_COLOR } from "../../utils/colors";
 import { getResponsiveIframeSize, useWindowSize } from "../../utils/helpers";
 import BackgroundImage from "../common/BackgroundImage";
 import Anchor from "./Anchor";
@@ -17,7 +17,7 @@ const Container = styled.div`
 	position: relative;
 	padding-bottom: 125px;
 	&::before {
-		background: rgba(255, 255, 255, 0.1);
+		background: ${COLOR_15};
 		width: 100%;
 		height: 100%;
 		position: absolute;
