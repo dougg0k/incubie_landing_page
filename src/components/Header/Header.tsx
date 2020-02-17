@@ -180,7 +180,7 @@ function Header({
 					<LogoHorizontalImage />
 				</ImageContainer>
 				{width && width < RESPONSIVE_BUTTON_MENU_WIDTH ? (
-					<MobileButton onClick={open}>
+					<MobileButton onClick={open} aria-label="Mobile menu">
 						<>
 							<IconBar />
 							<IconBar />
