@@ -118,4 +118,4 @@ function BenefitItem({
 	);
 }
 
-export default BenefitItem;
+export default React.memo(BenefitItem);

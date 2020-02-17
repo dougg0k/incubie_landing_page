@@ -63,7 +63,7 @@ function TourSection({ id }: Props) {
 				<VideoScreenshotImage />
 				<Title>Progressive Project Leads Only.</Title>
 				<SecondText>Take the tour</SecondText>
-				<Button onClick={open}>
+				<Button onClick={open} aria-label="Play">
 					<PlayCircleFilledIcon style={{ width: 50, height: 50 }} />
 				</Button>
 			</Container>

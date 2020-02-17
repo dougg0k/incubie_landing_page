@@ -43,6 +43,7 @@ const A = styled.a`
 	font-size: 0.9em;
 	border: 0;
 	outline: none;
+	filter: contrast(1.5);
 	&:hover {
 		color: ${MAIN_COLOR};
 		cursor: pointer;

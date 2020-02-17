@@ -1,7 +1,7 @@
 export const MAIN_COLOR = "#8CBDD3";
 export const WHITE_COLOR = "#fff";
-export const COLOR_1 = "#b548c7";
-export const COLOR_2 = "#666";
+export const COLOR_1 = "#B443C6";
+export const COLOR_2 = "#666666";
 export const COLOR_3 = "#333";
 export const COLOR_4 = "#23282f";
 export const COLOR_5 = "#fafafa";
@@ -13,3 +13,4 @@ export const COLOR_10 = "#99c5d7";
 export const COLOR_11 = "#f3f3f3";
 export const COLOR_12 = "#454545";
 export const COLOR_13 = "#337ab7";
+export const COLOR_14 = "#999999";

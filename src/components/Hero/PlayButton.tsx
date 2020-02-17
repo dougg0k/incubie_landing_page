@@ -29,7 +29,7 @@ interface Props {
 
 function PlayButton({ children, onClick }: Props) {
 	return (
-		<Button onClick={onClick}>
+		<Button onClick={onClick} aria-label="Play">
 			<PlayCircleFilledIcon fontSize="small" style={{ marginRight: 5 }} />
 			{children}
 		</Button>

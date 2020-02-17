@@ -41,21 +41,35 @@ function Footer() {
 		<Container>
 			<LogoImage />
 			<LinksContainer>
-				<CircleLink href="https://www.facebook.com/incubie/" target="_blank">
+				<CircleLink
+					href="https://www.facebook.com/incubie/"
+					target="_blank"
+					rel="noreferrer"
+					aria-label="Facebook"
+				>
 					<FacebookIcon style={{ color: WHITE_COLOR }} fontSize="small" />
 				</CircleLink>
-				<CircleLink href="https://twitter.com/IncubieApp" target="_blank">
+				<CircleLink
+					href="https://twitter.com/IncubieApp"
+					target="_blank"
+					rel="noreferrer"
+					aria-label="Twitter"
+				>
 					<TwitterIcon style={{ color: WHITE_COLOR }} fontSize="small" />
 				</CircleLink>
 				<CircleLink
 					href="https://www.youtube.com/channel/UCtUUmRBPdWuWdB-3KjMi3xw"
 					target="_blank"
+					rel="noreferrer"
+					aria-label="Youtube"
 				>
 					<YouTubeIcon style={{ color: WHITE_COLOR }} fontSize="small" />
 				</CircleLink>
 				<CircleLink
 					href="https://www.linkedin.com/company/incubie/"
 					target="_blank"
+					rel="noreferrer"
+					aria-label="Linkedin"
 				>
 					<LinkedInIcon style={{ color: WHITE_COLOR }} fontSize="small" />
 				</CircleLink>

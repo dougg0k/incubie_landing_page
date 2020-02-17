@@ -56,4 +56,4 @@ function FactItem({ title, icon, description }: Props) {
 	);
 }
 
-export default FactItem;
+export default React.memo(FactItem);
