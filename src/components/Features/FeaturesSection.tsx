@@ -22,6 +22,7 @@ const Heading = styled.h2`
 	color: ${COLOR_3};
 	margin: 0;
 	margin-bottom: 70px;
+	text-align: center;
 `;
 
 const slideLeftAnimation = keyframes`
@@ -55,6 +56,12 @@ const FeatureContainer = styled.div`
 	margin: 0 25px;
 	margin-bottom: 70px;
 	${animationStyle};
+	@media (max-width: 768px) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 95%;
+	}
 `;
 
 const FeatureTitle = styled.h3`
@@ -64,6 +71,13 @@ const FeatureTitle = styled.h3`
 	font-size: 1.3em;
 	text-transform: capitalize;
 	align-self: flex-start;
+`;
+
+const TitleContainer = styled.div`
+	@media (max-width: 768px) {
+		margin-top: 20px;
+		align-self: flex-start;
+	}
 `;
 
 const FeatureDescription = styled.p`
@@ -91,12 +105,21 @@ const FeatureLeftSide = styled.div`
 	width: ${(props: SideProps) => (props.width ? props.width + "px" : "auto")};
 	height: ${(props: SideProps) => (props.height ? props.height + "px" : "auto")};
 	margin-right: 30px;
+	@media (max-width: 768px) {
+		margin-right: 0;
+		width: 100%;
+		height: 100%;
+	}
 `;
 
 const FeatureRightSide = styled.div`
 	${featureSides}
 	width: ${(props: SideProps) => (props.width ? props.width + "px" : "auto")};
 	height: ${(props: SideProps) => (props.height ? props.height + "px" : "auto")};
+	@media (max-width: 768px) {
+		width: 100%;
+		height: 100%;
+	}
 `;
 
 const BottomText = styled.span``;
@@ -136,7 +159,9 @@ function FeaturesSection({ id }: Props) {
 						<CommentsImage />
 					</FeatureLeftSide>
 					<FeatureRightSide width={230}>
-						<FeatureTitle>Prioritize Smarter</FeatureTitle>
+						<TitleContainer>
+							<FeatureTitle>Prioritize Smarter</FeatureTitle>
+						</TitleContainer>
 						<FeatureDescription>
 							Vote on and discuss ideas to get clarify up front. Implement what
 							your team and users really need

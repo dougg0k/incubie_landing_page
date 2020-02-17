@@ -8,6 +8,9 @@ const Container = styled.div`
 	flex-direction: column;
 	width: 490px;
 	height: 245px;
+	@media (max-width: 768px) {
+		width: 100%;
+	}
 `;
 
 const Top = styled.div`

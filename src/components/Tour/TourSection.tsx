@@ -3,6 +3,7 @@ import * as React from "react";
 import useModal from "react-hooks-use-modal";
 import styled from "styled-components";
 import { COLOR_13, MAIN_COLOR, WHITE_COLOR } from "../../utils/colors";
+import { getResponsiveIframeSize, useWindowSize } from "../../utils/helpers";
 import VideoScreenshotImage from "./VideoScreenshotImage";
 
 const Container = styled.div`
@@ -19,6 +20,7 @@ const Title = styled.h2`
 	font-weight: 300;
 	text-transform: capitalize;
 	font-size: 1.7em;
+	text-align: center;
 `;
 
 const SecondText = styled.h3`
@@ -48,13 +50,15 @@ interface Props {
 
 function TourSection({ id }: Props) {
 	const [Modal, open] = useModal("index-page");
+	const { width } = useWindowSize();
+	const { responsiveHeight, responsiveWidth } = getResponsiveIframeSize(width);
 	return (
 		<>
 			<Modal>
 				<div>
 					<iframe
-						width="600"
-						height="315"
+						width={responsiveWidth}
+						height={responsiveHeight}
 						src="https://www.youtube.com/embed/4UcOnyng44g"
 						frameBorder="0"
 						allow="accelerometer; encrypted-media; gyroscope;"

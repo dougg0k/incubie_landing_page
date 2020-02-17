@@ -19,6 +19,9 @@ const FactsContainer = styled.div`
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
 `;
 
 const facts = [

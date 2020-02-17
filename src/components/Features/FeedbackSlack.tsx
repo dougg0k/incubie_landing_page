@@ -11,12 +11,19 @@ const Container = styled.div`
 	border-radius: 6px;
 	margin-bottom: 10px;
 	width: 490px;
+	@media (max-width: 768px) {
+		width: 100%;
+	}
 `;
 
 const LeftTextContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 15px 10px;
+	word-wrap: break-word;
+	@media (max-width: 768px) {
+		width: 65%;
+	}
 `;
 
 const TitleText = styled.span`
@@ -44,6 +51,9 @@ const RightTextContainer = styled.div`
 	justify-content: center;
 	text-align: center;
 	width: 90px;
+	@media (max-width: 768px) {
+		float: right;
+	}
 `;
 
 const ImageContainer = styled.div`

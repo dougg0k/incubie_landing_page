@@ -2,6 +2,7 @@ import * as React from "react";
 import useModal from "react-hooks-use-modal";
 import styled, { css, keyframes } from "styled-components";
 import { WHITE_COLOR } from "../../utils/colors";
+import { getResponsiveIframeSize, useWindowSize } from "../../utils/helpers";
 import BackgroundImage from "../common/BackgroundImage";
 import Anchor from "./Anchor";
 import PlayButton from "./PlayButton";
@@ -23,6 +24,9 @@ const Container = styled.div`
 		content: "";
 		top: 0;
 		left: 0;
+	}
+	@media (max-width: 768px) {
+		flex-direction: column;
 	}
 `;
 
@@ -50,6 +54,14 @@ const LeftSide = styled.div`
 	margin-right: 30px;
 	${animationStyle};
 	animation-name: ${slideLeftAnimation};
+	@media (max-width: 768px) {
+		justify-content: center;
+		width: 95%;
+		margin: 0;
+	}
+	@media (max-width: 1200px) {
+		margin: 0 30px;
+	}
 `;
 
 const slideRightAnimation = keyframes`
@@ -69,6 +81,12 @@ const RightSide = styled.div`
 	align-items: center;
 	${animationStyle};
 	animation-name: ${slideRightAnimation};
+	@media (max-width: 768px) {
+		width: 95%;
+	}
+	@media (max-width: 1200px) {
+		margin: 0 30px;
+	}
 `;
 
 const Heading = styled.h1`
@@ -97,13 +115,15 @@ interface Props {
 
 function HeroSection({ id }: Props) {
 	const [Modal, open] = useModal("index-page");
+	const { width } = useWindowSize();
+	const { responsiveHeight, responsiveWidth } = getResponsiveIframeSize(width);
 	return (
 		<>
 			<Modal>
 				<div>
 					<iframe
-						width="600"
-						height="315"
+						width={responsiveWidth}
+						height={responsiveHeight}
 						src="https://www.youtube.com/embed/G88_dkVcIT8"
 						frameBorder="0"
 						allow="accelerometer; encrypted-media; gyroscope"
