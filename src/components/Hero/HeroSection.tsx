@@ -114,7 +114,7 @@ interface Props {
 }
 
 function HeroSection({ id }: Props) {
-	const [Modal, open] = useModal("index-page");
+	const [Modal, open] = useModal("index-page", true);
 	const { width } = useWindowSize();
 	const { responsiveHeight, responsiveWidth } = getResponsiveIframeSize(width);
 	return (

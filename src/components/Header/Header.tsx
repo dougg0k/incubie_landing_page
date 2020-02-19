@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
 	justify-content: space-around;
 	align-items: center;
 	position: fixed;
-	z-index: 50;
+	z-index: 1;
 	width: 100%;
 	height: ${(props: StyledHeaderProps) =>
 		props.isCollapsed ? "auto" : HEADER_HEIGHT + "px"};
@@ -162,7 +162,7 @@ function Header({
 	thirdOnClick,
 	isCollapsed = false,
 }: Props) {
-	const [Modal, open] = useModal("index-page");
+	const [Modal, open] = useModal("index-page", true);
 	const { width } = useWindowSize();
 	return (
 		<>
