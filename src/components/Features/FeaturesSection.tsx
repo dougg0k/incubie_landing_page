@@ -202,4 +202,4 @@ function FeaturesSection({ id }: Props) {
 	);
 }
 
-export default FeaturesSection;
+export default React.memo(FeaturesSection);

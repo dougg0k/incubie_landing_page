@@ -1,9 +1,9 @@
-import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import * as React from "react";
 import useModal from "react-hooks-use-modal";
 import styled from "styled-components";
 import { COLOR_13, MAIN_COLOR, WHITE_COLOR } from "../../utils/colors";
 import { getResponsiveIframeSize, useWindowSize } from "../../utils/helpers";
+import PlayIcon from "../common/PlayIcon";
 import VideoScreenshotImage from "./VideoScreenshotImage";
 
 const Container = styled.div`
@@ -71,11 +71,11 @@ function TourSection({ id }: Props) {
 				<Title>Progressive Project Leads Only.</Title>
 				<SecondText>Take the tour</SecondText>
 				<Button onClick={open} aria-label="Play">
-					<PlayCircleFilledIcon style={{ width: 50, height: 50 }} />
+					<PlayIcon style={{ width: 50, height: 50 }} />
 				</Button>
 			</Container>
 		</>
 	);
 }
 
-export default TourSection;
+export default React.memo(TourSection);

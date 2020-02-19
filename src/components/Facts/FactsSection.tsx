@@ -40,4 +40,4 @@ function FactsSection() {
 	);
 }
 
-export default FactsSection;
+export default React.memo(FactsSection);

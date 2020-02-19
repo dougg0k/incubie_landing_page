@@ -1,7 +1,7 @@
-import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import * as React from "react";
 import styled from "styled-components";
 import { MAIN_COLOR, WHITE_COLOR } from "../../utils/colors";
+import PlayIcon from "../common/PlayIcon";
 
 const Button = styled.button`
 	text-transform: uppercase;
@@ -34,7 +34,7 @@ interface Props {
 function PlayButton({ children, onClick }: Props) {
 	return (
 		<Button onClick={onClick} aria-label="Play">
-			<PlayCircleFilledIcon fontSize="small" style={{ marginRight: 5 }} />
+			<PlayIcon style={{ marginRight: 5 }} />
 			{children}
 		</Button>
 	);

@@ -155,4 +155,4 @@ function HeroSection({ id }: Props) {
 	);
 }
 
-export default HeroSection;
+export default React.memo(HeroSection);

@@ -73,4 +73,4 @@ function BenefitsSection({ id }: Props) {
 	);
 }
 
-export default BenefitsSection;
+export default React.memo(BenefitsSection);
